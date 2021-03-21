@@ -23,7 +23,23 @@
         </div>
     </header>
 
-    <div id="container1"></div>
+    
+    <div id="container1">
+    </div>
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+            <h3 style="text-align: center;">Add a review</h3>
+    
+            <label for="Rating"><b>Your Rating</b></label>
+            <input type="text" placeholder="Enter your rating here" name="rate" id="rate" required>
+    
+            <label for="review"><b>Your Review</b></label>
+            <input type="text" placeholder="Enter your review here" name="review" id ="review" required>
+    
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
     <footer>
         <div class="footer-text">
@@ -39,6 +55,16 @@
             
         </div>
     </footer>
+
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 
     <script src="./main.js"></script>
     <script>

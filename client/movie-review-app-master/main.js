@@ -121,11 +121,10 @@ function getMovie() {
         <h4>Runtime: ${movie.Runtime}</h4>
         </div>   
         <h4 class = "rating">Average Rating: </h4>
-        <h4 class = "count">Rating Count: </h4>       
+        <h4 class = "count">Rating Count: </h4> 
+        <a onclick= "return openForm()" href="#"><h4>Review this title<h4></a>   
         
-        <a onclick="reviewTitle('${
-            movie.Title
-        }')"  href="http://127.0.0.1:5500/client/movie-review-app-master/index2.html"><h4>Review Title<h4></a>
+      
         </div>
         </div>
 
@@ -137,6 +136,13 @@ function getMovie() {
     });
 }
 
+function openForm() {
+    document.getElementById('myForm').style.display = 'block';
+}
+
+function closeForm() {
+    document.getElementById('myForm').style.display = 'none';
+}
 const moviesInfo = [
     {
         id: '791373',
@@ -943,62 +949,105 @@ const moviesInfo = [
         Website: 'N/A',
         Response: 'True',
     },
+    {
+        id: '13',
+        poster_path: 'h5J4W4veyxMXDMjeNxZI46TsHOb.jpg',
+        Title: 'Forrest Gump',
+        Year: '1994',
+        Rated: 'PG-13',
+        Released: '06 Jul 1994',
+        Runtime: '142 min',
+        Genre: 'Drama, Romance',
+        Director: 'Robert Zemeckis',
+        Writer: 'Winston Groom (novel), Eric Roth (screenplay)',
+        Actors: 'Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys',
+        Plot:
+            'The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.',
+        Language: 'English',
+        Country: 'USA',
+        Awards: 'Won 6 Oscars. Another 44 wins & 75 nominations.',
+        Poster:
+            'https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
+        Ratings: [
+            {
+                Source: 'Internet Movie Database',
+                Value: '8.8/10',
+            },
+            {
+                Source: 'Rotten Tomatoes',
+                Value: '71%',
+            },
+            {
+                Source: 'Metacritic',
+                Value: '82/100',
+            },
+        ],
+        Metascore: '82',
+        imdbRating: '8.8',
+        imdbVotes: '1,826,575',
+        imdbID: 'tt0109830',
+        Type: 'movie',
+        DVD: '01 Aug 2013',
+        BoxOffice: '$330,455,270',
+        Production: 'Paramount Pictures',
+        Website: 'N/A',
+        Response: 'True',
+    },
 ];
 
-    // const forElement = document.querySelector("#form1");
-    // formElement.addEventListener('submit', e => {
-    //   e.preventDefault();
-    //   const formData = new FormData(formElement);
-    //   const request = new Request('http://localhost:3000/api/reviews/myratings', {
-    //       method: 'POST',
-    //       headers: new Headers({
-    //           'Content-Type': 'application/json'
-    //       }),
-    //       body: formData
-    //   });
+// const forElement = document.querySelector("#form1");
+// formElement.addEventListener('submit', e => {
+//   e.preventDefault();
+//   const formData = new FormData(formElement);
+//   const request = new Request('http://localhost:3000/api/reviews/myratings', {
+//       method: 'POST',
+//       headers: new Headers({
+//           'Content-Type': 'application/json'
+//       }),
+//       body: formData
+//   });
 
-    //   fetch(request).then(res => {res.send()});
-    // });
+//   fetch(request).then(res => {res.send()});
+// });
 
-    // //sign up
-    // // {
-    // //     "email" : "anonymous123@gmail.com",
-    // //     "password" : "123",
-    // //     "firstName" : "Abhinav",
-    // //     "lastName" : "Kumar"
-    // // }
-    // const formElement = document.querySelector("#form2");
-    // formElement.addEventListener('submit', e => {
-    //   e.preventDefault();
-    //   const formData = new FormData(formElement);
-    //   const request = new Request('http://localhost:3000/api/users/', {
-    //       method: 'POST',
-    //       headers: new Headers({
-    //           'Content-Type': 'application/json'
-    //       }),
-    //       body: formData
-    //   });
+// //sign up
+// // {
+// //     "email" : "anonymous123@gmail.com",
+// //     "password" : "123",
+// //     "firstName" : "Abhinav",
+// //     "lastName" : "Kumar"
+// // }
+// const formElement = document.querySelector("#form2");
+// formElement.addEventListener('submit', e => {
+//   e.preventDefault();
+//   const formData = new FormData(formElement);
+//   const request = new Request('http://localhost:3000/api/users/', {
+//       method: 'POST',
+//       headers: new Headers({
+//           'Content-Type': 'application/json'
+//       }),
+//       body: formData
+//   });
 
-    //   fetch(request).then(res => {res.send()});
-    // });
+//   fetch(request).then(res => {res.send()});
+// });
 
-    // //login
-    // // {
-    // //     "email" : "anonymous123@gmail.com",
-    // //     "password" : "123"
-    // // }
-    // const formElement = document.querySelector("#form3");
-    // formElement.addEventListener('submit', e => {
-    //   e.preventDefault();
-    //   const formData = new FormData(formElement);
-    //   const request = new Request('http://localhost:3000/api/users/', {
-    //       method: 'POST',
-    //       headers: new Headers({
-    //           'Content-Type': 'application/json'
-    //       }),
-    //       body: formData
-    //   });
+// //login
+// // {
+// //     "email" : "anonymous123@gmail.com",
+// //     "password" : "123"
+// // }
+// const formElement = document.querySelector("#form3");
+// formElement.addEventListener('submit', e => {
+//   e.preventDefault();
+//   const formData = new FormData(formElement);
+//   const request = new Request('http://localhost:3000/api/users/', {
+//       method: 'POST',
+//       headers: new Headers({
+//           'Content-Type': 'application/json'
+//       }),
+//       body: formData
+//   });
 
-    //   fetch(request).then(res => {res.send()});
-    // });
-
+//   fetch(request).then(res => {res.send()});
+// });
